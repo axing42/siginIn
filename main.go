@@ -47,8 +47,7 @@ func login(u, p string) string {
 	all, _ := io.ReadAll(do.Body)
 	_ = json.Unmarshal(all, &l)
 	if l.Status != 1 {
-		log.Println(l)
-		syscall.Exit(0)
+		log.Fatalln(l)
 	}
 	return l.Key
 }
