@@ -123,7 +123,6 @@ func remove(a []int, target int) []int {
 	return a
 }
 
-// 流程:
 // workingAll -> working && category -> signIn -> login 完成签到
 func main() {
 	workingAll()
