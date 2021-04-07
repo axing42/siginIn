@@ -1,4 +1,5 @@
 # start -> 2021年3月16日22:08:32
+# end -> 2021年4月七日22点00分
 # use this project
 * 在config.json配置文件里根据json对应格式配置好账号密码后(这里多个账户我使用了一个密码,有需求提issue)
 * go build
