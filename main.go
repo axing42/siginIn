@@ -132,7 +132,6 @@ func main() {
 	flag.Parse()
 	switch more {
 	case 0:
-		println(more)
 		workingAll()
 	case 1:
 		ids := category()
