@@ -125,8 +125,6 @@ func remove(a []int, target int) []int {
 
 // workingAll -> working && category -> signIn -> login 完成签到
 func main() {
-	//workingAll()
-	//time.Sleep(time.Second * 1)
 	var uname , pwd string
 	// 多账号签到使用形式
 	// 0：默认从配置文件读取账号签到
