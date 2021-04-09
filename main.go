@@ -125,10 +125,10 @@ func remove(a []int, target int) []int {
 
 // workingAll -> working && category -> signIn -> login 完成签到
 func main() {
-	var uname , pwd string; var more int
+	var uname , pwd string; var more uint
 	flag.StringVar(&uname,"u","","账号默认为空")
 	flag.StringVar(&pwd,"p","","密码默认为空")
-	flag.IntVar(&more,"m",0,"是否多账号")
+	flag.UintVar(&more,"m",0,"是否多账号")
 	flag.Parse()
 	switch more {
 	case 0:
