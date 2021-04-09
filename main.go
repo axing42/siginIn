@@ -125,13 +125,7 @@ func remove(a []int, target int) []int {
 
 // workingAll -> working && category -> signIn -> login 完成签到
 func main() {
-	var uname , pwd string
-	// 多账号签到使用形式
-	// 0：默认从配置文件读取账号签到
-	// 1：单账户签到
-	// 2：多账号签到 以逗号分割
-	// hlx.exe -u xxx.qq.com,xx.qq.com -p 123,123
-	var more int
+	var uname , pwd string; var more int
 	flag.StringVar(&uname,"u","","账号默认为空")
 	flag.StringVar(&pwd,"p","","密码默认为空")
 	flag.IntVar(&more,"m",0,"是否多账号")
