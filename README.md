@@ -21,12 +21,12 @@
 
 * 1：单账户签到
 
-* `hlx.exe -u xx.qq.com -p 密码写这里`
+* `hlx.exe -u xx.qq.com -p 密码写这里 -m 1`
 
 * 2: 多账号签到 以逗号分割
 
 * ```go
-  hlx.exe -u xx.qq.com,xx.qq.com -p 123,123
+  hlx.exe -u xx.qq.com,xx.qq.com -p 123456,654321 -m 2
   ```
 
 ## 待完善 :
