@@ -5,6 +5,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"encoding/json"
+	"flag"
 	"io"
 	"log"
 	"net/http"
@@ -13,7 +14,6 @@ import (
 	"strings"
 	"sync"
 	"syscall"
-	"time"
 )
 
 // 葫芦侠登录
@@ -125,6 +125,38 @@ func remove(a []int, target int) []int {
 
 // workingAll -> working && category -> signIn -> login 完成签到
 func main() {
-	workingAll()
-	time.Sleep(time.Second * 1)
+	//workingAll()
+	//time.Sleep(time.Second * 1)
+	var uname , pwd string
+	// 多账号签到使用形式
+	// 0：默认从配置文件读取账号签到
+	// 1：单账户签到
+	// 2：多账号签到 以逗号分割
+	// hlx.exe -u xxx.qq.com,xx.qq.com -p 123,123
+	var more int
+	flag.StringVar(&uname,"u","","账号默认为空")
+	flag.StringVar(&pwd,"p","","密码默认为空")
+	flag.IntVar(&more,"m",0,"是否多账号")
+	flag.Parse()
+	switch more {
+	case 0:
+		println(more)
+		workingAll()
+	case 1:
+		ids := category()
+		working(login(uname,pwd),ids)
+	case 2:
+		ids := category()
+		u := strings.Split(uname, ",")
+		p := strings.Split(pwd,",")
+		var wg sync.WaitGroup
+		wg.Add(len(u))
+		for i:=0;i<len(u);i++ {
+			go func(i int,w *sync.WaitGroup) {
+				working(login(u[i],p[i]),ids)
+				w.Done()
+			}(i,&wg)
+		}
+		wg.Wait()
+	}
 }
