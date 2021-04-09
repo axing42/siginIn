@@ -4,9 +4,10 @@
 
 * **git clone https://github.com/axing42/siginIn** **or**
 * **go get -u github.com/axing42/siginIn**
+* **cd siginin**
 
-* 在`config.json`配置文件里根据json对应格式配置好账号密码后(这里多个账户我使用了一个密码,有需求提issue)
 * **go build**
+* 在`config.json`配置文件里根据json对应格式配置好账号密码后(这里多个账户我使用了一个密码,有需求提issue)
 * 执行exe文件
 # 2021/4/9下午4:39:48 更新：
 * 增加命令行参数 动态读取账号密码并进行签到
