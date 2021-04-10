@@ -124,28 +124,29 @@ func remove(a []int, target int) []int {
 }
 
 func main() {
-	var uname , pwd string; var more uint
-	flag.StringVar(&uname,"u","","账号默认为空")
-	flag.StringVar(&pwd,"p","","密码默认为空")
-	flag.UintVar(&more,"m",0,"是否多账号")
+	var uname, pwd string
+	var more uint
+	flag.StringVar(&uname, "u", "", "账号默认为空")
+	flag.StringVar(&pwd, "p", "", "密码默认为空")
+	flag.UintVar(&more, "m", 0, "是否多账号")
 	flag.Parse()
 	switch more {
 	case 0:
 		workingAll()
 	case 1:
 		ids := category()
-		working(login(uname,pwd),ids)
+		working(login(uname, pwd), ids)
 	case 2:
 		ids := category()
 		u := strings.Split(uname, ",")
-		p := strings.Split(pwd,",")
+		p := strings.Split(pwd, ",")
 		var wg sync.WaitGroup
 		wg.Add(len(u))
-		for i:=0;i<len(u);i++ {
-			go func(i int,w *sync.WaitGroup) {
-				working(login(u[i],p[i]),ids)
+		for i := 0; i < len(u); i++ {
+			go func(i int, w *sync.WaitGroup) {
+				working(login(u[i], p[i]), ids)
 				w.Done()
-			}(i,&wg)
+			}(i, &wg)
 		}
 		wg.Wait()
 	}
