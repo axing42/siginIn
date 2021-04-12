@@ -1,10 +1,6 @@
 name: Go
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   schedule:
     - cron: '1 16 * * *'
 
@@ -13,13 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.16
+#     - name: Set up Go
+#       uses: actions/setup-go@v2
+#       with:
+#         go-version: 1.16
 
     - name: Build
-      run: go build -o hlx && chmod +x hlx
+      run: go build -o hlx && chmod +x hlx && hlx
       
-    - name: r
-      run : ./hlx
+#     - name: r
+#       run : ./hlx
