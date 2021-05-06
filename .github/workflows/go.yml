@@ -1,8 +1,9 @@
   
-name: Go2
+name: Go
 
 on:
   schedule:
+  # 每天凌晨00：30+- 执行
     - cron: '1 16 * * *'
 
 jobs:
