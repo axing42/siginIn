@@ -1,6 +1,6 @@
 # 2021年3月16日22:08:32
 # use this project
-
+# 不更新了 是失效提issue
 * **git clone https://github.com/axing42/siginIn** **or**
 * **go get -u github.com/axing42/siginIn**
 * **cd siginin**
