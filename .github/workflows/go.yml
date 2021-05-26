@@ -1,8 +1,9 @@
   
-name: Go2
+name: Go
 
 on:
   schedule:
+  # 每天凌晨00：30+- 执行
     - cron: '1 16 * * *'
 
 jobs:
@@ -11,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Build
-      run: wget https://github.com/axing42/siginIn/blob/master/hlx && chmod +x hlx && hlx
+    - name:  executeHlx
+      run: wget https://github.com/axing42/siginIn/blob/master/hlx && chmod +x ./hlx && ./hlx
       
